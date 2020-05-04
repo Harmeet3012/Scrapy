@@ -1,0 +1,58 @@
+"Commands Used"
+
+Installing and creating virtual environment
+- Install Python and Sublime Text
+- in cmd, pip install pipenv
+- create a virtual environment - virtualenv . (type this inside Scrapy Folder)
+
+-----------------------------------------------------------------------------------------------------------
+
+Step 1: Go to the below path
+C:\Users\Lelouch\SublimeTextProjects\Scrapy>
+
+Step2 : Activate the virtual environment using the below commands
+cd quoteTutorial
+cd quoteTutorial
+C:\Users\Lelouch\SublimeTextProjects\Scrapy\quoteTutorial\quoteTutorial>.\Scripts\activate
+
+(Script)C:\Users\Lelouch\SublimeTextProjects\Scrapy\quoteTutorial\quoteTutorial>.\Scripts\activate
+
+Step3 : Installing Scrapy
+Inside Scrapy folder, in cmd, type command-> pip install Scrapy
+
+Step4 : Create a new project inside Scrapy
+C:\Users\Lelouch\SublimeTextProjects\Scrapy>scrapy startproject projectname
+
+Step5: Creating a spider
+(Script)C:\Users\Lelouch\SublimeTextProjects\Scrapy\quoteTutorial\quoteTutorial>scrapy genspider spider_name website
+
+--------------------------------------------------------------------------------------------------------------
+
+(Script)C:\Users\Lelouch\SublimeTextProjects\Scrapy>scrapy crawl 'name of the spider'
+
+
+"Storing data in JSON XML and CSV"
+
+(Script)C:\Users\Lelouch\SublimeTextProjects\Scrapy\quoteTutorial\quoteTutorial>scrapy crawl 'name of the spider' -o json/csv/xml
+
+"Extrating data using CSS Selector"
+
+Step 1: On activated virtual environment, run the following command
+
+(Script)C:\Users\Lelouch\SublimeTextProjects\Scrapy\quoteTutorial\quoteTutorial>scrapy shell "enter the site"
+
+Step 2: If response code is 200, it means that the page source code is sucessfuly retrieved
+
+Step 3: use code response.css("tags and classes").extract()
+
+It will return the data in the list format []
+
+response.css("tags and classes")[index].extract() -> It gives the data at the index value in the list
+response.css("tags and classes").extract_first() -> It gives the data at index value 0 in the list
+
+Extracting the data using XPATH Selector
+
+response.xpath("//small[@class='author']/text()").extract()
+response.css("a").xpath("@href").extract()
+
+
